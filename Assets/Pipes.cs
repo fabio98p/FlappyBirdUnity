@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Floor : MonoBehaviour
+public class Pipes : MonoBehaviour
 {
     public Vector2 PosIniziale { get; set; }
     // Start is called before the first frame update

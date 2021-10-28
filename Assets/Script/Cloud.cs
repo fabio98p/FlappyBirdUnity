@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Floor : MonoBehaviour
+public class Cloud : MonoBehaviour
 {
-    public Vector2 PosIniziale { get; set; }
     // Start is called before the first frame update
+    Vector2 posIniziale;
     void Start()
     {
-        PosIniziale = transform.position;
+        posIniziale = transform.position;
     }
 
     // Update is called once per frame
@@ -16,11 +16,11 @@ public class Floor : MonoBehaviour
     {
         if (transform.position.x <= -5f)
         {
-            transform.position = PosIniziale;
+            transform.position = posIniziale;
         }
         else
         {
-            transform.position = new Vector2(transform.position.x - 2f * Time.deltaTime, transform.position.y);
+            transform.position = new Vector2(transform.position.x - 0.5f * Time.deltaTime, transform.position.y);
         }
     }
 }
