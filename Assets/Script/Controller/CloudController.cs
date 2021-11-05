@@ -17,12 +17,15 @@ public class CloudController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnTimer += Time.deltaTime;
-        if (SpawnTimer >= SpawnRate)
+        if (!GameoverController.gameover)
         {
-            SpawnTimer -= SpawnRate;
-            Vector2 spawnPos = new Vector2(6f, Random.Range(1f, 4f));
-            Instantiate(Cloud, spawnPos, Quaternion.identity);
+            SpawnTimer += Time.deltaTime;
+            if (SpawnTimer >= SpawnRate)
+            {
+                SpawnTimer -= SpawnRate;
+                Vector2 spawnPos = new Vector2(6f, Random.Range(1f, 4f));
+                Instantiate(Cloud, spawnPos, Quaternion.identity);
+            }
         }
     }
 }

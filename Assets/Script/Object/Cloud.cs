@@ -14,13 +14,17 @@ public class Cloud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= -5f)
+        if (!GameoverController.gameover)
         {
-            transform.position = posIniziale;
-        }
-        else
-        {
-            transform.position = new Vector2(transform.position.x - 0.5f * Time.deltaTime, transform.position.y);
+
+            if (transform.position.x <= -5f)
+            {
+                transform.position = posIniziale;
+            }
+            else
+            {
+                transform.position = new Vector2(transform.position.x - 0.5f * Time.deltaTime, transform.position.y);
+            }
         }
     }
 }

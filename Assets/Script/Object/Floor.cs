@@ -14,13 +14,16 @@ public class Floor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= -5f)
+        if (!GameoverController.gameover)
         {
-            transform.position = PosIniziale;
-        }
-        else
-        {
-            transform.position = new Vector2(transform.position.x - 2f * Time.deltaTime, transform.position.y);
+            if (transform.position.x <= -5f)
+            {
+                transform.position = PosIniziale;
+            }
+            else
+            {
+                transform.position = new Vector2(transform.position.x - 2f * Time.deltaTime, transform.position.y);
+            }
         }
     }
 }
