@@ -5,12 +5,13 @@ using UnityEngine;
 public class CloudController : MonoBehaviour
 {
     float SpawnTimer;
-    float SpawnRate = 3f;
+    float SpawnRate = 15f;
     public GameObject Cloud;
     // Start is called before the first frame update
     void Start()
     {
-
+        Vector2 spawnPos = new Vector2(6f, Random.Range(1f, 4f));
+        Instantiate(Cloud, spawnPos, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -20,7 +21,7 @@ public class CloudController : MonoBehaviour
         if (SpawnTimer >= SpawnRate)
         {
             SpawnTimer -= SpawnRate;
-            Vector2 spawnPos = new Vector2(2f, Random.Range(-1f, 2f));
+            Vector2 spawnPos = new Vector2(6f, Random.Range(1f, 4f));
             Instantiate(Cloud, spawnPos, Quaternion.identity);
         }
     }
